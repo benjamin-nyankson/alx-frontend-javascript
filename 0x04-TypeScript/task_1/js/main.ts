@@ -30,7 +30,6 @@ function printTeacher(teacher: TeacherName): string {
   return `${firstName}. ${lastName}`;
 }
 
-
 // Interface for the constructor
 interface StudentClassConstructor {
   new (firstName: string, lastName: string): StudentClassInterface;
@@ -42,8 +41,8 @@ interface StudentClassInterface {
   displayName(): string;
 }
 
-// Class implementation
-class StudentClass implements StudentClassInterface {
+// Class definition (must match exactly)
+class StudentClass {
   private firstName: string;
   private lastName: string;
 
@@ -60,9 +59,3 @@ class StudentClass implements StudentClassInterface {
     return this.firstName;
   }
 }
-
-// Example usage
-const student: StudentClassInterface = new StudentClass("John", "Doe");
-
-console.log(student.displayName());    // John
-console.log(student.workOnHomework()); // Currently working
