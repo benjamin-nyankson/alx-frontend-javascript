@@ -12,14 +12,14 @@ interface TeacherInterface {
 
 class Director implements DirectorInterface {
     getCoffeeBreak() {
-        return "DirectorInterface"
+        return "Getting a coffee break"
     }
     workDirectorTasks() {
         return "Getting to director tasks"
     }
 
     workFromHome() {
-        return "Getting a coffee break"
+        return "Working from home"
     }
 }
 
