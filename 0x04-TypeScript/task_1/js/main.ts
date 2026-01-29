@@ -104,6 +104,7 @@ class Teacher implements TeacherInterface{
 
 const teacher = new Teacher();
 const director = new Director()
+
 function createEmployee(salary:number){
 if(salary<500){
   return teacher
@@ -113,4 +114,12 @@ else{
 }
 }
 
-console.log(createEmployee(200))
+
+function teachClass(todayClass:string){
+if(todayClass==="Math"){
+  return "Teaching Math"
+}
+else{
+  return "Teaching History"
+}
+}
