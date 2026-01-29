@@ -3,7 +3,9 @@ interface IShared{
   getCoffeeBreak:()=>string
 }
 
-interface DirectorInterface extends IShared{
+interface DirectorInterface{
+     workFromHome:()=>string;
+  getCoffeeBreak:()=>string
   workDirectorTasks:()=>string
 }
 
