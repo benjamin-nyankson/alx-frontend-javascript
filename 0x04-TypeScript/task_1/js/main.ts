@@ -9,6 +9,6 @@ interface Teacher {
   [key: string]: any;
 }
 
-interface Directors extends Teacher{
-    numberOfReports:number
+interface Directors extends Teacher {
+  numberOfReports: number;
 }
