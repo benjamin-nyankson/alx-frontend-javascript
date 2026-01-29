@@ -1,8 +1,3 @@
-interface IShared{
-  workFromHome:()=>string;
-  getCoffeeBreak:()=>string
-}
-
 interface DirectorInterface{
   workFromHome:()=>string;
   getCoffeeBreak:()=>string
