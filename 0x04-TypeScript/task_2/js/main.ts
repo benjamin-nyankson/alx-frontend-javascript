@@ -4,12 +4,14 @@ interface IShared{
 }
 
 interface DirectorInterface{
-     workFromHome:()=>string;
+  workFromHome:()=>string;
   getCoffeeBreak:()=>string
   workDirectorTasks:()=>string
 }
 
-interface TeacherInterface extends IShared{
+interface TeacherInterface{
+      workFromHome:()=>string;
+  getCoffeeBreak:()=>string
   workTeacherTasks:()=>string
 }
 
