@@ -1,8 +1,10 @@
-interface Teacher{
-    readonly firstName:string
-    readonly lastName:string
-    location:string
-    contract:boolean
-    fullTimeEmployee:boolean
-    yearsOfExperience?:number
+interface Teacher {
+  readonly firstName: string;
+  readonly lastName: string;
+  fullTimeEmployee: boolean;
+  yearsOfExperience?: number;
+  location: string;
+
+  // Allow any additional properties
+  [key: string]: any;
 }
