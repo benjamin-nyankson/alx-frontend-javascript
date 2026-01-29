@@ -8,3 +8,7 @@ interface Teacher {
   // Allow any additional properties
   [key: string]: any;
 }
+
+interface Directors extends Teacher{
+    numberOfReports:number
+}
