@@ -1,51 +1,51 @@
-interface DirectorInterface{
-  workFromHome:()=>string;
-  getCoffeeBreak:()=>string
-  workDirectorTasks:()=>string
+interface DirectorInterface {
+    workFromHome: () => string;
+    getCoffeeBreak: () => string
+    workDirectorTasks: () => string
 }
 
-interface TeacherInterface{
-      workFromHome:()=>string;
-  getCoffeeBreak:()=>string
-  workTeacherTasks:()=>string
+interface TeacherInterface {
+    workFromHome: () => string;
+    getCoffeeBreak: () => string
+    workTeacherTasks: () => string
 }
 
-class Director implements DirectorInterface{
-  getCoffeeBreak(){
-    return "DirectorInterface"
-  }
-  workDirectorTasks(){
-    return "Getting to director tasks"
-  }
+class Director implements DirectorInterface {
+    getCoffeeBreak() {
+        return "DirectorInterface"
+    }
+    workDirectorTasks() {
+        return "Getting to director tasks"
+    }
 
-  workFromHome(){
-    return "Getting a coffee break"
-  }
+    workFromHome() {
+        return "Getting a coffee break"
+    }
 }
 
-class Teacher implements TeacherInterface{
-  getCoffeeBreak(){
-    return "Cannot have a break"
-  }
+class Teacher implements TeacherInterface {
+    getCoffeeBreak() {
+        return "Cannot have a break"
+    }
 
-  workFromHome(){
-    return "Cannot work from home"
-  }
+    workFromHome() {
+        return "Cannot work from home"
+    }
 
-  workTeacherTasks(){
-    return "Getting to work"
-  }
+    workTeacherTasks() {
+        return "Getting to work"
+    }
 }
 
 const teacher = new Teacher();
 const director = new Director()
-function createEmployee(salary:number){
-if(salary<500){
-  return teacher
-}
-else{
-  return director
-}
+function createEmployee(salary: number) {
+    if (salary < 500) {
+        return teacher
+    }
+    else {
+        return director
+    }
 }
 
 console.log(createEmployee(200))
