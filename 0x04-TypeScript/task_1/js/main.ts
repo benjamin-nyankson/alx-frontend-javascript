@@ -112,3 +112,5 @@ else{
   return director
 }
 }
+
+console.log(createEmployee(200))
