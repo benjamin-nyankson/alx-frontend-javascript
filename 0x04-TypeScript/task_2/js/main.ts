@@ -41,10 +41,10 @@ const teacher = new Teacher();
 const director = new Director()
 function createEmployee(salary: number) {
     if (salary < 500) {
-        return teacher
+        return new Teacher()
     }
     else {
-        return director
+        return new Director()
     }
 }
 
