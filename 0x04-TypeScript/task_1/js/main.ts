@@ -30,6 +30,7 @@ function printTeacher(teacher: TeacherName): string {
   return `${firstName}. ${lastName}`;
 }
 
+
 // Interface for the constructor
 interface StudentClassConstructor {
   new (firstName: string, lastName: string): StudentClassInterface;
@@ -41,8 +42,8 @@ interface StudentClassInterface {
   displayName(): string;
 }
 
-// Class definition (must match exactly)
-class StudentClass {
+// Class implementation
+class StudentClass implements StudentClassInterface {
   private firstName: string;
   private lastName: string;
 
@@ -60,50 +61,54 @@ class StudentClass {
   }
 }
 
-// DirectorInterface with expected methods
-interface DirectorInterface {
-  workFromHome(): string;
-  getCoffeeBreak(): string;
-  workDirectorTasks(): string;
+
+interface IShared{
+  workFromHome:()=>string;
+  getCoffeeBreak:()=>string
 }
 
-// TeacherInterface with expected methods
-interface TeacherInterface {
-  workFromHome(): string;
-  getCoffeeBreak(): string;
-  workTeacherTasks(): string;
+interface DirectorInterface extends IShared{
+  workDirectorTasks:()=>string
 }
 
-// Director class implementing DirectorInterface
-class Director implements DirectorInterface {
-  workFromHome(): string {
-    return "Working from home";
-  }
-  getCoffeeBreak(): string {
-    return "Getting a coffee break";
-  }
-  workDirectorTasks(): string {
-    return "Getting to director tasks";
-  }
+interface TeacherInterface extends IShared{
+  workTeacherTasks:()=>string
 }
 
-// Teacher class implementing TeacherInterface
-class Teacher implements TeacherInterface {
-  workFromHome(): string {
-    return "Cannot work from home";
+class Director implements DirectorInterface{
+  getCoffeeBreak(){
+    return "DirectorInterface"
   }
-  getCoffeeBreak(): string {
-    return "Cannot have a break";
+  workDirectorTasks(){
+    return "Getting to director tasks"
   }
-  workTeacherTasks(): string {
-    return "Getting to work";
+
+  workFromHome(){
+    return "Getting a coffee break"
   }
 }
 
-// createEmployee function
-function createEmployee(salary: number | string): Director | Teacher {
-  if (typeof salary === "number" && salary < 500) {
-    return new Teacher();
+class Teacher implements TeacherInterface{
+  getCoffeeBreak(){
+    return "Cannot have a break"
   }
-  return new Director();
+
+  workFromHome(){
+    return "Cannot work from home"
+  }
+
+  workTeacherTasks(){
+    return "Getting to work"
+  }
+}
+
+const teacher = new Teacher();
+const director = new Director()
+function createEmployee(salary:number){
+if(salary<500){
+  return teacher
+}
+else{
+  return director
+}
 }
